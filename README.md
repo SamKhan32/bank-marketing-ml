@@ -1,6 +1,6 @@
 # Bank Marketing Machine Learning Analysis
 
-This repository contains a machine learning project analyzing the UCI Bank Marketing dataset. The objective is to compare the performance of traditional machine learning models (Logistic Regression, Naive Bayes) with a feed-forward neural network implemented in PyTorch. The task is to predict whether a customer will subscribe to a term deposit based on demographic, financial, and campaign-related features.
+This repository contains a machine learning project analyzing the UCI Bank Marketing dataset. The objective is to compare the performance of traditional machine learning models (Logistic Regression, Random Forest) with a feed-forward neural network implemented in PyTorch. The task is to predict whether a customer will subscribe to a term deposit based on demographic, financial, and campaign-related features.
 
 ## Project Overview
 
@@ -8,46 +8,50 @@ Financial institutions rely on targeted marketing to identify potential customer
 
 ## Repository Structure
 
-    bank-marketing-ml/
-    │
-    ├── README.md
-    ├── report/
-    │   └── project_report.pdf
-    │
-    ├── data/
-    │   ├── raw/
-    │   │   └── bank.csv
-    │   └── processed/
-    │       └── bank_processed.csv
-    │
-    ├── notebooks/
-    │   ├── 01_exploration.ipynb
-    │   ├── 02_preprocessing.ipynb
-    │   ├── 03_baseline_models.ipynb
-    │   └── 04_neural_network.ipynb
-    │
-    ├── src/
-    │   ├── preprocess.py
-    │   ├── train_baseline.py
-    │   ├── train_nn.py
-    │   └── utils.py
-    │
-    ├── models/
-    │   ├── logistic_regression.pkl
-    │   ├── naive_bayes.pkl
-    │   └── neural_net.pt
-    │
-    ├── results/
-    │   ├── metrics/
-    │   └── figures/
-    │
-    └── requirements.txt
+```
+bank-marketing-ml/
+│
+├── README.md
+├── report/
+│   └── project_report.pdf
+│
+├── data/
+│   ├── raw/
+│   │   ├── bank-full.csv
+│   │   ├── bank.csv
+│   │   └── bank-names.txt
+│   └── processed/
+│       └── bank_processed_unbalanced.csv
+│
+├── notebooks/
+│   ├── 01_exploration.ipynb
+│   ├── 02_preprocessing.ipynb
+│   ├── 03_baseline_models.ipynb
+│   └── 04_neural_network.ipynb
+│
+├── src/
+│   ├── preprocess.py
+│   ├── train_baseline.py
+│   ├── train_nn.py
+│   └── utils.py
+│
+├── models/
+│   ├── logistic_regression.pkl
+│   ├── random_forest.pkl
+│   └── neural_net.pt
+│
+├── results/
+│   ├── metrics/
+│   └── figures/
+│
+└── requirements.txt
+```
 
 ## Methods
 
 Baseline Models:
 - Logistic Regression (scikit-learn)
-- Naive Bayes (scikit-learn)
+- Random Forest (scikit-learn)
 
 Neural Network:
 - Fully connected feed-forward network implemented in PyTorch
@@ -60,7 +64,6 @@ Models are compared using:
 - Accuracy
 - Precision, recall, and F1-score
 - Confusion matrices
-- ROC curves
 - Training and validation loss (for the neural network)
 
 The final report, located in the `report/` directory, provides full details, analysis, and discussion of results.
